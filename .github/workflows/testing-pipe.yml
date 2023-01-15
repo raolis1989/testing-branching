@@ -1,10 +1,8 @@
-definitions:
- steps:
-   -step: &prueba rama feature
- 	name: corre paso commit en feature
-	script:
-	  - echo "Hola mundo"
-pipelines:
+on: 
+ push:
   branches:
-     'feature/TP-*/*':
-	  -step: *prueba rama feature
+    - "feature/TP-*/*"
+jobs:
+  steps:
+    - name: testing commit feature
+	    run: echo "Hola mundo"
