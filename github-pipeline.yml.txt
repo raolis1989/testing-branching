@@ -1,0 +1,10 @@
+definitions:
+ steps:
+   -step: &prueba rama feature
+ 	name: corre paso commit en feature
+	script:
+	  - echo "Hola mundo"
+pipelines:
+  branches:
+     'feature/TP-*/*':
+	  -step: *prueba rama feature
